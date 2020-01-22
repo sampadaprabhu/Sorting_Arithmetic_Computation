@@ -5,3 +5,5 @@ read a
 read b
 read c
 
+First_Operation=$(( $a + $b * $c ))
+echo "The output of First Operation is: $First_Operation"
