@@ -13,7 +13,7 @@ echo "The output of First Operation is: $First_Operation"
 Second_Operation=$(( $a * $b + $c ))
 echo "The output of Second Operation is: $Second_Operation"
 
-Third_Operation=$(( $c + $( echo "scale=2; $(( $a/$b ))" | bc ) ))
+Third_Operation=$( echo "scale=2; $a / $b + $c " | bc )
 echo "The output of Third Operation is: $Third_Operation"
 
 Fourth_Operation=$(( $a % $b + $c ))
@@ -41,7 +41,7 @@ for (( i=0; i<=$length; i++))
 do
 	for ((j=$i+1; j<=$length; j++ ))
 	do
-		if [[ ${arithmeticArray[$i]} -gt ${arithmeticArray[$j]} ]]
+		if [[ ${arithmeticArray[i]%%.*} -gt ${arithmeticArray[j]%%.*} ]]
 		then
 			#swapping
 			temp=${arithmeticArray[$i]}
@@ -59,7 +59,6 @@ do
 	printf "${arithmeticArray[$i]} "
 done
 echo
-
 #Sorting in Ascending Order
 echo "Sorted Array in Ascending Order: "
 for (( i=0; i<=$length; i++ ))
@@ -67,5 +66,6 @@ do
 	printf "${arithmeticArray[$i]} "
 done
 echo
+
 
 
