@@ -60,4 +60,12 @@ do
 done
 echo
 
+#Sorting in Ascending Order
+echo "Sorted Array in Ascending Order: "
+for (( i=0; i<=$length; i++ ))
+do
+	printf "${arithmeticArray[$i]} "
+done
+echo
+
 
