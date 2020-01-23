@@ -1,4 +1,5 @@
-#!/bin/bash -x
+#!/bin/bash
+
 declare -A arithmeticDictionary
 declare -a arithmeticArray
 echo "Enter the Three numbers"
@@ -55,6 +56,8 @@ echo "Sorted Array is: ${arithmeticArray[@]}"
 echo "Sorted Array in Descending Order: "
 for (( i=$length; i>=0; i--))
 do
-	printf "${arithmeticArray[@]}"
+	printf "${arithmeticArray[$i]} "
 done
 echo
+
+
