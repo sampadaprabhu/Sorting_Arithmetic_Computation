@@ -41,7 +41,7 @@ for (( i=0; i<=$length; i++))
 do
 	for ((j=$i+1; j<=$length; j++ ))
 	do
-		if [[ ${arithmeticArray[$i]} -gt ${arithmeticArray[$j]} ]]
+		if [[ ${arithmeticArray[$i]%%.*} -gt ${arithmeticArray[$j]%%.*} ]]
 		then
 			#swapping
 			temp=${arithmeticArray[$i]}
@@ -59,5 +59,4 @@ do
 	printf "${arithmeticArray[$i]} "
 done
 echo
-
 
