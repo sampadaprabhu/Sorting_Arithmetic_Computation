@@ -32,3 +32,29 @@ do
 	arithmeticArray[$i]=${arithmeticDictionary[$j]}
 	((i++))
 done
+
+#Sorting
+temp=0
+length=${#arithmeticArray[@]}
+for (( i=0; i<=$length; i++))
+do
+	for ((j=$i+1; j<=$length; j++ ))
+	do
+		if [[ ${arithmeticArray[$i]} -gt ${arithmeticArray[$j]} ]]
+		then
+			#swapping
+			temp=${arithmeticArray[$i]}
+			arithmeticArray[$i]=${arithmeticArray[$j]}
+			arithmeticArray[$j]=$temp
+		fi
+	done
+done
+echo "Sorted Array is: ${arithmeticArray[@]}"
+
+#Sorting in Descending Order
+echo "Sorted Array in Descending Order: "
+for (( i=$length; i>=0; i--))
+do
+	printf "${arithmeticArray[@]}"
+done
+echo
