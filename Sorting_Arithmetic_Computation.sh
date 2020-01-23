@@ -24,3 +24,11 @@ arithmeticDictionary[Third_Operation]=$Third_Operation
 arithmeticDictionary[Fourth_Operation]=$Fourth_Operation
 
 echo "Arithmetic Dictionaary: ${arithmeticDictionary[@]}"
+
+#Dictionary to Array
+i=0
+for j in ${!arithmeticDictionary[@]}
+do
+	arithmeticArray[$i]=${arithmeticDictionary[$j]}
+	((i++))
+done
