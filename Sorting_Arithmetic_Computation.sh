@@ -1,5 +1,6 @@
 #!/bin/bash -x
-
+declare -A arithmeticDictionary
+declare -a arithmeticArray
 echo "Enter the Three numbers"
 read a
 read b
@@ -16,3 +17,10 @@ echo "The output of Third Operation is: $Third_Operation"
 
 Fourth_Operation=$(( $a % $b + $c ))
 echo "The output of Fourth Operation is: $Fourth_Operation"
+
+arithmeticDictionary[First_Operation]=$First_Operation
+arithmeticDictionary[Second_Operation]=$Second_Operation
+arithmeticDictionary[Third_Operation]=$Third_Operation
+arithmeticDictionary[Fourth_Operation]=$Fourth_Operation
+
+echo "Arithmetic Dictionaary: ${arithmeticDictionary[@]}"
